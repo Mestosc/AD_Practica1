@@ -27,5 +27,8 @@ public class Main {
             return "non é directorio (ficheiro)";
         }
     }
-    public static void crearDirectorio() {}
+    public static void crearDirectorio(String cadea) {
+        File archivo = new File(cadea);
+        archivo.mkdirs();
+    }
 }
