@@ -3,8 +3,9 @@ import java.io.IOException;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Ejercicios {
     public static void main(String[] args) {
+        System.out.println(eDirectorio("arquivosdir"));
         //System.out.println(eDirectorio("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
         //System.out.println(eFicheiro("../../Descargas"));
         //System.out.println(eDirectorio("Hola mundo"));
@@ -17,7 +18,9 @@ public class Main {
         //calculaLonxitude("/home/dam/","Captura-desde-2025-09-11-12-24-08.png");
         //System.out.println(mLectura("/home/dam/","Crar"));
        // System.out.println(mEscritura("/home/dam/","Crar"));
-        borraFicheiro("/home/dam/","Crar");
+       // borraFicheiro("/home/dam/","Crar");
+       // borrarDirectorio("/home/dam/Escritorio/sdjlkf");
+       // recur(new File("/home/dam/Descargas"));
     }
 
     public static String eDirectorio(String cadea) {
@@ -101,6 +104,16 @@ public class Main {
             ar.delete();
         } else {
             System.out.println("Ruta inexistente o con descendencia");
+        }
+    }
+    public static void recur(File dir) {
+        if (dir.isDirectory()) {
+             String[] archivos = dir.list();
+             if (archivos!=null) {
+             for (String ar : archivos) {
+                 System.out.println(ar);
+             }
+             }
         }
     }
 }
