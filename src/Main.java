@@ -10,6 +10,7 @@ public class Main {
         System.out.println(eDirectorio("../../Descargas")); // Empieza en la carpeta del proyecto así que esto funciona
         System.out.println(eFicheiro("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
         System.out.println(eDirectorio("Hola mundo"));
+        crearDirectorio("especimen");
     }
     public static String eDirectorio(String cadea) {
         File archivo = new File(cadea);
@@ -30,9 +31,9 @@ public class Main {
     public static void crearDirectorio(String cadea) {
         File archivo = new File(cadea);
         if (archivo.mkdirs()) {
-            System.out.println("Archivo creado");
+            System.out.println("Directorio creado");
         } else {
-            System.out.println("Archivo no creado");
+            System.out.println("Directorio no creado");
         }
     }
 }
