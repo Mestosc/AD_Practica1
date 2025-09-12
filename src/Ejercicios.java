@@ -6,7 +6,8 @@ public class Ejercicios {
     public static void main(String[] args) {
         //System.out.println(eDirectorio("arquivosdir"));
         //crearDirectorio("arquivosdir/subdir");
-        recur(new File("arquivosdir"));
+        //recur(new File("arquivosdir"));
+        mLectura("arquivosdir","Products.txt");
         //creaFicheiro("arquivosdir/subdir","Products2.txt");
         //System.out.println(eFicheiro("arquivosdir/Products.txt"));
         //System.out.println(eDirectorio("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
