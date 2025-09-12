@@ -16,7 +16,8 @@ public class Main {
         //modoAcceso("/home/dam/", "Crar");
         //calculaLonxitude("/home/dam/","Captura-desde-2025-09-11-12-24-08.png");
         //System.out.println(mLectura("/home/dam/","Crar"));
-        System.out.println(mEscritura("/home/dam/","Crar"));
+       // System.out.println(mEscritura("/home/dam/","Crar"));
+        borraFicheiro("/home/dam/","Crar");
     }
 
     public static String eDirectorio(String cadea) {
@@ -85,5 +86,13 @@ public class Main {
     public static boolean mEscritura(String dirName, String fileName) {
         File ar = new File(dirName+fileName);
         return ar.setWritable(true);
+    }
+    public static void borraFicheiro(String dirName, String fileName) {
+        File archivo = new File(dirName+fileName);
+        if (archivo.exists()) {
+            archivo.delete();
+        } else {
+            System.out.println("Ficheiro inexistente");
+        }
     }
 }
