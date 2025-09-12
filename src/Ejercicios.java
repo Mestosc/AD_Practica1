@@ -5,7 +5,10 @@ import java.io.IOException;
 public class Ejercicios {
     public static void main(String[] args) {
         //System.out.println(eDirectorio("arquivosdir"));
-        System.out.println(eFicheiro("arquivosdir/Products.txt"));
+        //crearDirectorio("arquivosdir/subdir");
+        recur(new File("arquivosdir"));
+        //creaFicheiro("arquivosdir/subdir","Products2.txt");
+        //System.out.println(eFicheiro("arquivosdir/Products.txt"));
         //System.out.println(eDirectorio("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
         //System.out.println(eFicheiro("../../Descargas"));
         //System.out.println(eDirectorio("Hola mundo"));
