@@ -113,7 +113,9 @@ public class Ejercicios {
         if (dir.isDirectory()) {
              String[] archivos = dir.list();
              if (archivos!=null) {
+                 System.out.print("|\n");
                 for (String ar : archivos) {
+                    System.out.print("|-");
                     System.out.println(ar);
                 }
              }
