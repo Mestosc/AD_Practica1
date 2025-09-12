@@ -113,9 +113,9 @@ public class Ejercicios {
         if (dir.isDirectory()) {
              String[] archivos = dir.list();
              if (archivos!=null) {
-             for (String ar : archivos) {
-                 System.out.println(ar);
-             }
+                for (String ar : archivos) {
+                    System.out.println(ar);
+                }
              }
         }
     }
