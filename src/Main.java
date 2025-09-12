@@ -29,6 +29,10 @@ public class Main {
     }
     public static void crearDirectorio(String cadea) {
         File archivo = new File(cadea);
-        archivo.mkdirs();
+        if (archivo.mkdirs()) {
+            System.out.println("Archivo creado");
+        } else {
+            System.out.println("Archivo no creado");
+        }
     }
 }
