@@ -1,11 +1,11 @@
 import java.io.File;
 import java.io.IOException;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Ejercicios {
     public static void main(String[] args) {
-        System.out.println(eDirectorio("arquivosdir"));
+        //System.out.println(eDirectorio("arquivosdir"));
+        System.out.println(eFicheiro("arquivosdir/Products.txt"));
         //System.out.println(eDirectorio("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
         //System.out.println(eFicheiro("../../Descargas"));
         //System.out.println(eDirectorio("Hola mundo"));
