@@ -95,4 +95,12 @@ public class Main {
             System.out.println("Ficheiro inexistente");
         }
     }
+    public static void borrarDirectorio(String dirName) {
+        File ar = new File(dirName);
+        if (ar.isDirectory()) {
+            ar.delete();
+        } else {
+            System.out.println("Ruta inexistente o con descendencia");
+        }
+    }
 }
