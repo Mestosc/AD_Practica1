@@ -12,10 +12,13 @@ public class Main {
         //System.out.println(eFicheiro("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
         //System.out.println(eDirectorio("Hola mundo"));
         //crearDirectorio("especimen");
-        creaFicheiro("/home/dam/","Crar");
-        modoAcceso("/home/dam/","Crar");
-
+        //creaFicheiro("/home/dam/", "Crar");
+        //modoAcceso("/home/dam/", "Crar");
+        //calculaLonxitude("/home/dam/","Captura-desde-2025-09-11-12-24-08.png");
+        //System.out.println(mLectura("/home/dam/","Crar"));
+        System.out.println(mEscritura("/home/dam/","Crar"));
     }
+
     public static String eDirectorio(String cadea) {
         File archivo = new File(cadea);
         if (archivo.isDirectory()) {
@@ -24,6 +27,7 @@ public class Main {
             return "non é directorio";
         }
     }
+
     public static String eFicheiro(String cadea) {
         File archivo = new File(cadea);
         if (archivo.isFile()) {
@@ -32,6 +36,7 @@ public class Main {
             return "non é directorio (ficheiro)";
         }
     }
+
     public static void crearDirectorio(String cadea) {
         File archivo = new File(cadea);
         if (archivo.mkdirs()) {
@@ -40,24 +45,25 @@ public class Main {
             System.out.println("Directorio no creado");
         }
     }
-    public static void creaFicheiro(String dirName,String fileName) {
-        File archivoCrear = new File(dirName+fileName);
+
+    public static void creaFicheiro(String dirName, String fileName) {
+        File archivoCrear = new File(dirName + fileName);
         try {
             archivoCrear.createNewFile();
         } catch (IOException e) {
             System.out.println(e);
         }
     }
+
     public static void modoAcceso(String dirName, String fileName) {
-        File archivo = new File(dirName+fileName);
+        File archivo = new File(dirName + fileName);
         if (archivo.canRead() && archivo.canWrite()) {
             System.out.println("lectura si");
             System.out.println("escritura si");
         } else if (!archivo.canRead() && !archivo.canWrite()) {
             System.out.println("lectura no");
             System.out.println("escritura no");
-        }
-        else if (archivo.canRead()) {
+        } else if (archivo.canRead()) {
             System.out.println("lectura si");
         } else if (archivo.canWrite()) {
             System.out.println("Escritura si");
@@ -66,5 +72,18 @@ public class Main {
         } else if (!archivo.canWrite()) {
             System.out.println("Escritura no");
         }
+    }
+
+    public static void calculaLonxitude(String dirName, String fileName) {
+        File archivo = new File(dirName + fileName);
+        System.out.println(archivo.length());
+    }
+    public static boolean mLectura(String dirName, String fileName) {
+        File ar = new File(dirName+fileName);
+        return ar.setReadOnly();
+    }
+    public static boolean mEscritura(String dirName, String fileName) {
+        File ar = new File(dirName+fileName);
+        return ar.setWritable(true);
     }
 }
