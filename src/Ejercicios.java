@@ -4,11 +4,12 @@ import java.io.IOException;
 
 public class Ejercicios {
     public static void main(String[] args) {
-        //System.out.println(eDirectorio("arquivosdir"));
+        // System.out.println(eDirectorio("arquivosdir"));
         //crearDirectorio("arquivosdir/subdir");
         //recur(new File("arquivosdir"));
-        mLectura("arquivosdir","Products.txt");
-        //creaFicheiro("arquivosdir/subdir","Products2.txt");
+        borraFicheiro("arquivosdir/","Products.txt");
+        //mEscritura("arquivosdir","Products.txt");
+        // creaFicheiro("arquivosdir/subdir","Products2.txt");
         //System.out.println(eFicheiro("arquivosdir/Products.txt"));
         //System.out.println(eDirectorio("../../Descargas/PSP_Tarea01.pdf")); // Empieza en la carpeta del proyecto así que esto funciona
         //System.out.println(eFicheiro("../../Descargas"));
@@ -96,7 +97,7 @@ public class Ejercicios {
     }
     public static void borraFicheiro(String dirName, String fileName) {
         File archivo = new File(dirName+fileName);
-        if (archivo.exists()) {
+        if (archivo.exists() && archivo.isFile()) {
             archivo.delete();
         } else {
             System.out.println("Ficheiro inexistente");
