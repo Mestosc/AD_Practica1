@@ -4,6 +4,9 @@ import java.io.IOException;
 
 public class Ejercicios {
     public static void main(String[] args) {
+        /*
+            Por algun motivo hay que poner el nombre del directorio con / ya que sino no te deja
+         */
         // System.out.println(eDirectorio("arquivosdir"));
         //crearDirectorio("arquivosdir/subdir");
         //recur(new File("arquivosdir"));
