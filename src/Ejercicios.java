@@ -118,6 +118,13 @@ public class Ejercicios {
         File ar = new File(dirName+fileName);
         return ar.setReadOnly();
     }
+
+    /**
+     * Le da permisos de escritura a un fichero
+     * @param dirName el nombre del directorio donde se encuentra el fichero
+     * @param fileName el nombre del fichero
+     * @return true si la
+     */
     public static boolean mEscritura(String dirName, String fileName) {
         File ar = new File(dirName+fileName);
         return ar.setWritable(true);
@@ -151,14 +158,26 @@ public class Ejercicios {
      */
     public static void recur(File dir) {
         if (dir.isDirectory()) {
-             String[] archivos = dir.list();
-             if (archivos!=null) {
-                 System.out.print("|\n");
+             File[] archivos = dir.listFiles();
+             for (File archivo : archivos) {
+                 if (archivo.isDirectory()) {
+                     recur(archivo);
+                 }
+                 System.out.println(archivo.getName());
+             }
+        }
+    }
+    public static void mContido(String dirName) {
+        File dir = new File(dirName);
+        if (dir.isDirectory()) {
+            String[] archivos = dir.list();
+            if (archivos!=null) {
+                System.out.print("|\n");
                 for (String ar : archivos) {
                     System.out.print("|-");
                     System.out.println(ar);
                 }
-             }
+            }
         }
     }
 }
