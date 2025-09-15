@@ -10,7 +10,7 @@ public class Ejercicios {
         // System.out.println(eDirectorio("arquivosdir"));
         //crearDirectorio("arquivosdir/subdir");
         //recur(new File("arquivosdir"));
-        borraFicheiro("arquivosdir/","Products.txt");
+        //borraFicheiro("arquivosdir/","Products.txt");
         //mEscritura("arquivosdir","Products.txt");
         // creaFicheiro("arquivosdir/subdir","Products2.txt");
         //System.out.println(eFicheiro("arquivosdir/Products.txt"));
@@ -29,6 +29,12 @@ public class Ejercicios {
        // borraFicheiro("/home/dam/","Crar");
        // borrarDirectorio("/home/dam/Escritorio/sdjlkf");
        // recur(new File("/home/dam/Descargas"));
+//        borraFicheiro("arquivosdir/","dsf");
+//        borraFicheiro("arquivosdir/subdir/","Products2.txt");
+//        borraFicheiro("arquivosdir/subdir/sdfs/","sffaf");
+//        borrarDirectorio("arquivosdir/subdir/sdfs/");
+//        borrarDirectorio("arquivosdir/subdir/");
+//        borrarDirectorio("arquivosdir/");
     }
 
     public static String eDirectorio(String cadea) {
