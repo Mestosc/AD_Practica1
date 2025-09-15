@@ -7,9 +7,9 @@ public class Ejercicios {
         /*
             Por algun motivo hay que poner el nombre del directorio con / ya que sino no te deja
          */
-        // System.out.println(eDirectorio("arquivosdir"));
+        // System.out.println(eDirectorio("arquivosdir/"));
         //crearDirectorio("arquivosdir/subdir");
-        //recur(new File("arquivosdir"));
+        //recur(new File("arquivosdir/"));
         //borraFicheiro("arquivosdir/","Products.txt");
         //mEscritura("arquivosdir","Products.txt");
         // creaFicheiro("arquivosdir/subdir","Products2.txt");
@@ -114,7 +114,8 @@ public class Ejercicios {
     }
     public static void borrarDirectorio(String dirName) {
         File ar = new File(dirName);
-        if (ar.isDirectory()) {
+        if (ar.isDirectory() && ar.list() != null) { /* Ya que si la ruta es inexistente o tiene descendencia como es lo que ponia en la parte del ejercicio hago esta comprobacion
+        que es más exacta para ver si la ruta es un directorio y tiene descendencia*/
             ar.delete();
         } else {
             System.out.println("Ruta inexistente o con descendencia");
