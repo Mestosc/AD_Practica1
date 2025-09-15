@@ -8,7 +8,8 @@ public class Ejercicios {
             Por algun motivo hay que poner el nombre del directorio con / ya que sino no te deja
          */
         // System.out.println(eDirectorio("arquivosdir/"));
-        //crearDirectorio("arquivosdir/subdir");
+        crearDirectorio("arquivosdir/");
+        System.out.println(eDirectorio("arquivosdir/"));
         //recur(new File("arquivosdir/"));
         //borraFicheiro("arquivosdir/","Products.txt");
         //mEscritura("arquivosdir","Products.txt");
@@ -75,19 +76,14 @@ public class Ejercicios {
 
     public static void modoAcceso(String dirName, String fileName) {
         File archivo = new File(dirName + fileName);
-        if (archivo.canRead() && archivo.canWrite()) {
-            System.out.println("lectura si");
-            System.out.println("escritura si");
-        } else if (!archivo.canRead() && !archivo.canWrite()) {
-            System.out.println("lectura no");
-            System.out.println("escritura no");
-        } else if (archivo.canRead()) {
-            System.out.println("lectura si");
-        } else if (archivo.canWrite()) {
-            System.out.println("Escritura si");
-        } else if (!archivo.canRead()) {
+        if (archivo.canRead()) {
+            System.out.println("Lectura si");
+        } else {
             System.out.println("Lectura no");
-        } else if (!archivo.canWrite()) {
+        }
+        if (archivo.canWrite()) {
+            System.out.println("Escritura si");
+        } else {
             System.out.println("Escritura no");
         }
     }
