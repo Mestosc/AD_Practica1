@@ -8,8 +8,8 @@ public class Ejercicios {
             Por algun motivo hay que poner el nombre del directorio con / ya que sino no te deja
          */
         // System.out.println(eDirectorio("arquivosdir/"));
-        crearDirectorio("arquivosdir/");
-        System.out.println(eDirectorio("arquivosdir/"));
+        //crearDirectorio("arquivosdir/");
+        //System.out.println(eDirectorio("arquivosdir/"));
         //recur(new File("arquivosdir/"));
         //borraFicheiro("arquivosdir/","Products.txt");
         //mEscritura("arquivosdir","Products.txt");
@@ -58,13 +58,18 @@ public class Ejercicios {
 
     public static void crearDirectorio(String cadea) {
         File archivo = new File(cadea);
-        if (archivo.mkdirs()) {
+        if (archivo.mkdirs()) { // Uso mkdirs porque si el directorio padre no existe también lo crea así es más práctico
             System.out.println("Directorio creado");
         } else {
             System.out.println("Directorio no creado");
         }
     }
 
+    /**
+     * Crea un fichero vacio si este se encuentra en una ruta valida, y no existe previamente
+     * @param dirName el nombre del directorio
+     * @param fileName el nombre del fichero
+     */
     public static void creaFicheiro(String dirName, String fileName) {
         File archivoCrear = new File(dirName + fileName);
         try {
@@ -74,6 +79,11 @@ public class Ejercicios {
         }
     }
 
+    /**
+     * Comprueba si tiene permisos de lectura y/o escritura
+     * @param dirName El directorio que quieres verificar
+     * @param fileName El nombre del archivo a verificar
+     */
     public static void modoAcceso(String dirName, String fileName) {
         File archivo = new File(dirName + fileName);
         if (archivo.canRead()) {
@@ -88,6 +98,11 @@ public class Ejercicios {
         }
     }
 
+    /**
+     * Muestra la longitud de un fichero en bytes
+     * @param dirName el nombre del directorio donde esta el fichero
+     * @param fileName el nombre del fichero del que queremos saber eso
+     */
     public static void calculaLonxitude(String dirName, String fileName) {
         File archivo = new File(dirName + fileName);
         System.out.println(archivo.length());
@@ -108,6 +123,11 @@ public class Ejercicios {
             System.out.println("Ficheiro inexistente");
         }
     }
+
+    /**
+     * Borra un directorio si existe y no tiene descendencia
+     * @param dirName el nombre del directorio como un String
+     */
     public static void borrarDirectorio(String dirName) {
         File ar = new File(dirName);
         if (ar.isDirectory() && ar.list() != null) { /* Ya que si la ruta es inexistente o tiene descendencia como es lo que ponia en la parte del ejercicio hago esta comprobacion
@@ -117,6 +137,11 @@ public class Ejercicios {
             System.out.println("Ruta inexistente o con descendencia");
         }
     }
+
+    /**
+     * Muestra los nombres de los ficheros y subdirectorios, de un directorio
+     * @param dir un objeto File que representa un directorio
+     */
     public static void recur(File dir) {
         if (dir.isDirectory()) {
              String[] archivos = dir.list();
