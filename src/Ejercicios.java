@@ -107,6 +107,13 @@ public class Ejercicios {
         File archivo = new File(dirName + fileName);
         System.out.println(archivo.length());
     }
+
+    /**
+     * Establece un fichero como de solo lectura
+     * @param dirName el nombre del directorio donde esta
+     * @param fileName el nombre del archivo
+     * @return true si la operacion salio bien sino false
+     */
     public static boolean mLectura(String dirName, String fileName) {
         File ar = new File(dirName+fileName);
         return ar.setReadOnly();
